@@ -69,7 +69,7 @@ var a = splitArray.reduce(function longestWord(initWord, word){
 console.log(a); */
 
 // Exercise 5
-var string1 = "Dylan is learning to write functions in Javascript";
+/* var string1 = "Dylan is learning to write functions in Javascript";
 var splitCharacterArray = string1.split("");
 
 var b = splitCharacterArray.reduce(function countVowels(counter, newChar){
@@ -80,4 +80,75 @@ var b = splitCharacterArray.reduce(function countVowels(counter, newChar){
     return counter;
 },0);
 
-console.log(b);
+console.log(b); */
+
+// Exercise 6
+
+var myNewNumbers = [12, -20, 15, 189, -43, 64];
+
+var highLow = myNewNumbers.reduce(function highestLowest(acc, number){
+    if(number < acc.lowest){
+        acc.lowest = number;
+    } 
+    if (number > acc.highest){
+        acc.highest = number;
+    }
+    return acc;
+}, {lowest: Infinity, highest: -Infinity})
+
+console.log(highLow);    
+
+
+
+
+
+
+
+
+
+var massiveNumbers = [10009, 34987, -654321, -987, 96423];
+
+
+var biggestSmallest = massiveNumbers.reduce(function(acc, number) {
+    
+    if(number < acc.lowest){
+        acc.lowest = number;
+    }
+    if(number > acc.highest){
+        acc.highest = number;
+    }
+    return acc;
+    /*
+        1. check if the current number is lower than the lowest:
+            a. if it is, replace the lowest number
+            b. if not, let it be
+        2. check if the current number is higher than the higest:
+            a. if it is, reolace the highest
+            b. if not, let it be
+    */
+}, {lowest: Infinity, highest: -Infinity})
+
+console.log(biggestSmallest);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
