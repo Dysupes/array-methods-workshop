@@ -1,45 +1,43 @@
 // Exercise 1
 
-var positives = [1,2,3,5,6,9,12,15,17,29,44];
+var positives = [1,2,3,-4,6,9,12,1-15,17,-29,44];
 
-function printPositives(number){
-    positives.forEach(function(number){
-        if (number % 2 === 0) {
-            console.log(number + ' is even.');
+/* function printPositives(array){
+    array.forEach(function(number){
+        if (number > 0) {
+            console.log(number + ' is positive.');
         }
     });        
-}
+} */
 
-//printPositives();
+// printPositives(positives);
 
 // Exercise 2
 
-var positives = [1,2,3,5,6,9,12,15,17,29,44];
-
-function findPositives (number) {
-    if(number % 2 === 0){
+/* function findPositives (number) {
+    if(number > 0){
         return number;
     }
 };
 
 var filteredArray = positives.filter(findPositives);
-// console.log(filteredArray);
+console.log(filteredArray); */
 
-// Exercise 3
-
-var positives = [1,2,3,5,6,9,12,15,17,29,44];
+// Exercise 2B
 
 function findPositives (number) {
-    if(number % 2 === 0){
-        return number;
-    }
+     if(number > 0){
+         return number;
+     }
 };
 
-function printPositives(number){
-    return positives.filter(findPositives).forEach(function(number){
-        console.log(number);
+/* function printPositives(array){
+     return positives.filter(findPositives).forEach(function(number){
+         console.log(number);
         
-    });
+     });
 };
 
-printPositives();
+printPositives(positives); */
+
+// // Exercise 3
