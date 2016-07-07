@@ -118,7 +118,7 @@ console.log(biggestSmallest); */
 
 // Exercise 7
 
-var myNewestNumbers = [19, -63, 42, 78, 9, -157];
+/* var myNewestNumbers = [19, -63, 42, 78, 9, -157];
 
 var highLowTwo = myNewestNumbers.reduce(function TwohighestLowest(acc1, number1){
     if(number1 < acc1.lowest){
@@ -138,27 +138,29 @@ var highLowTwo = myNewestNumbers.reduce(function TwohighestLowest(acc1, number1)
     return acc1;
 }, {lowest: Infinity, secondLowest: Infinity, highest: -Infinity, secondHighest: -Infinity})
 
-console.log(highLowTwo);
+console.log(highLowTwo); */
 
+// Exercise 8
 
+var myString = "Dylan is learning Javascript";
 
+function countChars (string1){
+    var lettersArray = string1.split('');
+    lettersArray = lettersArray.filter(function (letter){
+        if (letter !== ' '){
+            return letter;
+        }
+    })
+    var returnedObject = lettersArray.reduce(function (initObj, newLetter){
+        if(initObj[newLetter]){
+            initObj[newLetter] += 1;
+        }
+        else {
+            initObj[newLetter] = 1;
+        }
+        return initObj;    
+    }, {});
+    return returnedObject;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(countChars(myString));
