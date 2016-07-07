@@ -84,7 +84,7 @@ console.log(b); */
 
 // Exercise 6
 
-var myNewNumbers = [12, -20, 15, 189, -43, 64];
+/* var myNewNumbers = [12, -20, 15, 189, -43, 64];
 
 var highLow = myNewNumbers.reduce(function highestLowest(acc, number){
     if(number < acc.lowest){
@@ -96,17 +96,10 @@ var highLow = myNewNumbers.reduce(function highestLowest(acc, number){
     return acc;
 }, {lowest: Infinity, highest: -Infinity})
 
-console.log(highLow);    
+console.log(highLow);  */  
 
-
-
-
-
-
-
-
-
-var massiveNumbers = [10009, 34987, -654321, -987, 96423];
+// Extra Exercise 6
+/* var massiveNumbers = [10009, 34987, -654321, -987, 96423];
 
 
 var biggestSmallest = massiveNumbers.reduce(function(acc, number) {
@@ -118,17 +111,34 @@ var biggestSmallest = massiveNumbers.reduce(function(acc, number) {
         acc.highest = number;
     }
     return acc;
-    /*
-        1. check if the current number is lower than the lowest:
-            a. if it is, replace the lowest number
-            b. if not, let it be
-        2. check if the current number is higher than the higest:
-            a. if it is, reolace the highest
-            b. if not, let it be
-    */
+
 }, {lowest: Infinity, highest: -Infinity})
 
-console.log(biggestSmallest);
+console.log(biggestSmallest); */
+
+// Exercise 7
+
+var myNewestNumbers = [19, -63, 42, 78, 9, -157];
+
+var highLowTwo = myNewestNumbers.reduce(function TwohighestLowest(acc1, number1){
+    if(number1 < acc1.lowest){
+        acc1.secondLowest = acc1.lowest;
+        acc1.lowest = number1;
+    } 
+    if (number1 > acc1.lowest && number1 < acc1.secondLowest){
+        acc1.secondLowest = number1;    
+    }
+    if (number1 > acc1.highest){
+        acc1.secondHighest = acc1.highest;
+        acc1.highest = number1;
+    }
+    if(number1 < acc1.highest && number1 > acc1.secondHighest){
+        acc1.secondHighest = number1;
+    }
+    return acc1;
+}, {lowest: Infinity, secondLowest: Infinity, highest: -Infinity, secondHighest: -Infinity})
+
+console.log(highLowTwo);
 
 
 
