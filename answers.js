@@ -142,25 +142,107 @@ console.log(highLowTwo); */
 
 // Exercise 8
 
-var myString = "Dylan is learning Javascript";
+// var myString = "Dylan is learning Javascript";
 
-function countChars (string1){
-    var lettersArray = string1.split('');
-    lettersArray = lettersArray.filter(function (letter){
-        if (letter !== ' '){
-            return letter;
-        }
-    })
-    var returnedObject = lettersArray.reduce(function (initObj, newLetter){
-        if(initObj[newLetter]){
-            initObj[newLetter] += 1;
-        }
-        else {
-            initObj[newLetter] = 1;
-        }
-        return initObj;    
-    }, {});
-    return returnedObject;
+// function countChars (string1){
+//     var lettersArray = string1.split('');
+//     lettersArray = lettersArray.filter(function (letter){
+//         if (letter !== ' '){
+//             return letter;
+//         }
+//     })
+//     var returnedObject = lettersArray.reduce(function (initObj, newLetter){
+//         if(initObj[newLetter]){
+//             initObj[newLetter] += 1;
+//         }
+//         else {
+//             initObj[newLetter] = 1;
+//         }
+//         return initObj;    
+//     }, {});
+//     return returnedObject;
+// }
+
+// console.log(countChars(myString));
+
+//Exercise 9
+
+/* var person = [
+    {
+        id: "312987",
+        firstName: "John",
+        lastName: "Smith",
+        email: "johnsmith@gmail.com"
+    },
+    {
+        id: "764587",
+        firstName: "Karen",
+        lastName: "Johnson",
+        email: "kjohnson@hotmail.com"
+    },
+    {
+        id: "907621",
+        firstName: "Pil Ja",
+        lastName: "Lee",
+        email: "pjlee@naver.com"
+    },
+    {
+        id: "090730",
+        firstName: "Emmanuelle",
+        lastName: "Pelletier",
+        email: "epelletier@gmail.com"
+    }
+]
+function peopleByID (array){
+    var uniqueID = array.reduce(function(emptyObj,personObj){
+        emptyObj[personObj.id] = personObj;
+            return emptyObj;
+    }, {})
+    return uniqueID;
 }
 
-console.log(countChars(myString));
+console.log(peopleByID(person)); */
+
+// Exercise 10
+
+var person1 = [
+    {
+        id: "312987",
+        firstName: "John",
+        lastName: "Smith",
+        email: "johnsmith@gmail.com"
+    },
+    {
+        id: "764587",
+        firstName: "John",
+        lastName: "Johnson",
+        email: "kjohnson@hotmail.com"
+    },
+    {
+        id: "907621",
+        firstName: "Jiwon",
+        lastName: "Lee",
+        email: "pjlee@naver.com"
+    },
+    {
+        id: "090730",
+        firstName: "Emmanuelle",
+        lastName: "Pelletier",
+        email: "epelletier@gmail.com"
+    }
+]
+
+function peopleByFirstName (array){
+    var peoplesFirstName = array.reduce(function(emptyObj1, personFirstName){
+        if (!emptyObj1[personFirstName.firstName]) {
+            emptyObj1[personFirstName.firstName] = [];
+            emptyObj1[personFirstName.firstName].push(personFirstName);
+        } else {
+            emptyObj1[personFirstName.firstName].push(personFirstName);
+        }
+        return emptyObj1;
+    }, {})
+    return peoplesFirstName;
+}
+
+console.log(peopleByFirstName(person1));
